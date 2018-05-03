@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss:jandex:2.0.3.Final">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/jandex/2.0.3.Final/jandex-2.0.3.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

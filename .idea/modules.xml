@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/estar-pile.iml" filepath="$PROJECT_DIR$/.idea/modules/estar-pile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/estar-pile_main.iml" filepath="$PROJECT_DIR$/.idea/modules/estar-pile_main.iml" group="estar-pile" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/estar-pile_test.iml" filepath="$PROJECT_DIR$/.idea/modules/estar-pile_test.iml" group="estar-pile" />
+    </modules>
+  </component>
+</project>

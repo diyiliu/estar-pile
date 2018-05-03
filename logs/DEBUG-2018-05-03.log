@@ -1,0 +1,77 @@
+[ DEBUG] [2018-05-03 14:52:19] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:52:20] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:52:20] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:52:20] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:52:21] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:52:21] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:52:25] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:52:25] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:52:25] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 14:52:25] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:52:25] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:57:07] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:57:07] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:57:07] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:57:07] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:57:09] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:57:09] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:57:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:57:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 14:57:12] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 14:57:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 14:57:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:38:07] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:38:07] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:38:07] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:38:07] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:38:08] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:38:08] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:38:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:38:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:38:12] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 15:38:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:38:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:41:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:41:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:41:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:41:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:41:13] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:41:13] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:41:17] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:41:17] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:41:17] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 15:41:17] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:41:17] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:52:55] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:52:55] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:52:55] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:52:55] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:52:57] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:52:57] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:53:00] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:53:00] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:53:00] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 15:53:00] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:53:00] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:58:39] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:58:40] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:58:40] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:58:40] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:58:41] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:58:41] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:58:44] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:58:44] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 15:58:44] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 15:58:44] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 15:58:44] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 16:20:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 16:20:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 16:20:12] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 16:20:12] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 16:20:13] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 16:20:13] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 16:20:16] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 16:20:16] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource
+[ DEBUG] [2018-05-03 16:20:16] org.springframework.jdbc.core.JdbcTemplate[424] - Executing SQL query [SELECT 'Hello' from DUAL]
+[ DEBUG] [2018-05-03 16:20:16] org.springframework.jdbc.datasource.DataSourceUtils[114] - Fetching JDBC Connection from DataSource
+[ DEBUG] [2018-05-03 16:20:16] org.springframework.jdbc.datasource.DataSourceUtils[340] - Returning JDBC Connection to DataSource

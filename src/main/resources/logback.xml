@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <property name="USER_HOME" value="./logs"/>
+    <timestamp key="FILE_NAME" datePattern="yyyy-MM-dd"/>
+
+    <!-- 打印到控制台-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                [%-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--DEBUG-->
+    <appender name="LOG-DEBUG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${USER_HOME}/DEBUG-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保存前15天的日志文件 -->
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <layout>
+            <Pattern>
+                [ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96}[%line] - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!--INFO-->
+    <appender name="LOG-INFO"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${USER_HOME}/INFO-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保存前15天的日志文件 -->
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <layout>
+            <Pattern>
+                [%-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!--WARN-->
+    <appender name="LOG-WARN"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${USER_HOME}/WARN-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保存前30天的日志文件 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <layout>
+            <Pattern>
+                [%-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!--ERROR-->
+    <appender name="LOG-ERROR"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${USER_HOME}/ERROR-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保存前30天的日志文件 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <layout>
+            <Pattern>
+                [%-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96}[%line] - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- 设置日志级别 -->
+    <root level="INFO">
+        <appender-ref ref="LOG-DEBUG"/>
+        <appender-ref ref="LOG-INFO"/>
+        <appender-ref ref="LOG-WARN"/>
+        <appender-ref ref="LOG-ERROR"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
