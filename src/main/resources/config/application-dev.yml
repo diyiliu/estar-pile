@@ -1,7 +1,7 @@
 # WEB PROPERTIES
 server:
   #address: 192.168.1.32
-  port: 8088
+  port: 3280
 
 # SPRING
 spring:

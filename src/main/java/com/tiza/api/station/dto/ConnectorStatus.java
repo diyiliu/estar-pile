@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Description: ConnectorStatus
@@ -22,6 +23,7 @@ public class ConnectorStatus {
     @JsonIgnore
     private Long id;
 
+    @Transient
     private String connectorID;
 
     private Integer status;

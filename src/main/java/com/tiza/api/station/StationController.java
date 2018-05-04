@@ -66,6 +66,9 @@ public class StationController {
             return respResult;
         }
 
+        // 设备接口编码
+        String connectorID = connectorStatus.getConnectorID();
+
         connectorStatus.setId(connector.getId());
         connectorStatus =  connectorStatusJpa.save(connectorStatus);
         if (connectorStatus == null){
@@ -73,7 +76,7 @@ public class StationController {
 
             String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
             respResult.setData(respData);
-            respResult.setMsg("设备接口[" + connectorStatus.getConnectorID()  +  "更新失败!");
+            respResult.setMsg("设备接口[" + connectorID  +  "更新失败!");
 
             return respResult;
         }
@@ -81,7 +84,7 @@ public class StationController {
         respMap.put("Status", 0);
         String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
         respResult.setData(respData);
-        respResult.setMsg("设备接口[" + connectorStatus.getConnectorID()  +  "更新成功!");
+        respResult.setMsg("设备接口[" + connectorID  +  "更新成功!");
 
         return respResult;
     }
