@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,8 +69,8 @@ public class StationController {
 
         // 设备接口编码
         String connectorID = connectorStatus.getConnectorID();
-
         connectorStatus.setId(connector.getId());
+        connectorStatus.setSystemTime(new Date());
         connectorStatus =  connectorStatusJpa.save(connectorStatus);
         if (connectorStatus == null){
             respMap.put("Status", 1);

@@ -3,10 +3,8 @@ package com.tiza.api.station.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Description: ConnectorStatus
@@ -26,9 +24,12 @@ public class ConnectorStatus {
     @Transient
     private String connectorID;
 
+    @Column(name = "SERVICESTATUS")
     private Integer status;
 
     private Integer parkStatus;
 
     private Integer lockStatus;
+
+    private Date systemTime;
 }
