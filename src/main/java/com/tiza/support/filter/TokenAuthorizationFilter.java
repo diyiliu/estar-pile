@@ -105,6 +105,8 @@ public class TokenAuthorizationFilter implements Filter {
             String json = AESUtil.Decrypt(reqBody.getData(), operator.getDataSecret(), operator.getDataSecretIv());
             req.setAttribute("operator", operator);
             req.setAttribute("data", json);
+            // 记录原始参数
+            req.setAttribute("body", reqBody);
 
             chain.doFilter(request, response);
         } catch (GeneralSecurityException e) {

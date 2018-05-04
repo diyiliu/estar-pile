@@ -1,4 +1,4 @@
-package com.tiza.support.advice;
+package com.tiza.support.filter.global;
 
 import com.tiza.support.model.RespResult;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 @RestController
 @ControllerAdvice
-public class ExceptionHandlerAdvice {
+public class ExceptionHandlerFilter {
 
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)

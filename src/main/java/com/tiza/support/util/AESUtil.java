@@ -1,23 +1,13 @@
 package com.tiza.support.util;
 //package com.gofun.common.power.telaidian;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
-
-import io.netty.handler.codec.base64.Base64Decoder;
-import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
-import java.io.IOException;
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.Charset;
 import java.security.GeneralSecurityException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 /*******************************************************************************

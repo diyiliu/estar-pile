@@ -1,10 +1,10 @@
 package com.tiza.api.account;
 
 import com.tiza.api.operator.dto.Operator;
+import com.tiza.support.anno.SystemLog;
 import com.tiza.support.model.RespResult;
 import com.tiza.support.model.Token;
 import com.tiza.support.util.AESUtil;
-import com.tiza.support.util.CommonUtil;
 import com.tiza.support.util.JacksonUtil;
 import com.tiza.support.util.RedisUtil;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,8 +33,16 @@ public class AccountController {
     @Resource
     private RedisUtil redisUtil;
 
+    /**
+     *  获取TOKEN
+     *
+     * @param request
+     * @return
+     * @throws Exception
+     */
+    @SystemLog
     @PostMapping("/query_token")
-    private RespResult queryToken(HttpServletRequest request) throws Exception{
+    public RespResult queryToken(HttpServletRequest request) throws Exception{
         Operator operator = (Operator) request.getAttribute("operator");
         String json = (String) request.getAttribute("data");
         Map tokenMap = jacksonUtil.toObject(json, HashMap.class);
@@ -81,6 +89,11 @@ public class AccountController {
         MessageDigest md5 = MessageDigest.getInstance("MD5");
         byte[] bytes = md5.digest(uuid.getBytes("UTF-8"));
 
-        return CommonUtil.toHex(bytes);
+        StringBuffer strBuf = new StringBuffer();
+        for (byte b : bytes) {
+            strBuf.append(String.format("%02X", b < 0 ? b + 256 : b));
+        }
+
+        return strBuf.toString();
     }
 }

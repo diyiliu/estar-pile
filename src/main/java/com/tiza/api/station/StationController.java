@@ -34,6 +34,12 @@ public class StationController {
     @Resource
     private ConnectorStatusJpa connectorStatusJpa;
 
+    /**
+     *  推送设备状态
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/notification_stationStatus")
     public RespResult notificationStationStatus(HttpServletRequest request) throws Exception{
         Operator operator = (Operator) request.getAttribute("operator");
@@ -55,7 +61,7 @@ public class StationController {
 
             String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
             respResult.setData(respData);
-            respResult.setMsg(connectorStatus.getConnectorID() +  "不存在。");
+            respResult.setMsg("设备接口[" + connectorStatus.getConnectorID() + "]不存在。");
 
             return respResult;
         }
@@ -67,7 +73,7 @@ public class StationController {
 
             String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
             respResult.setData(respData);
-            respResult.setMsg(connectorStatus.getConnectorID() +  "FAIL");
+            respResult.setMsg("设备接口[" + connectorStatus.getConnectorID()  +  "更新失败!");
 
             return respResult;
         }
@@ -75,7 +81,7 @@ public class StationController {
         respMap.put("Status", 0);
         String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
         respResult.setData(respData);
-        respResult.setMsg(connectorStatus.getConnectorID() +  "OK");
+        respResult.setMsg("设备接口[" + connectorStatus.getConnectorID()  +  "更新成功!");
 
         return respResult;
     }
