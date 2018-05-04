@@ -13,5 +13,5 @@ public class RespResult {
 
     private Integer ret = 0;
     private String msg = "";
-    private Object Data;
+    private String data;
 }

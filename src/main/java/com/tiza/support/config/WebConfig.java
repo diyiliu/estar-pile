@@ -3,7 +3,6 @@ package com.tiza.support.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
@@ -34,6 +33,7 @@ public class WebConfig {
     /**
      * 设置null 转json
      * 为空字符串''
+     *
      * @param builder
      * @return
      */
@@ -55,12 +55,12 @@ public class WebConfig {
     }
 
     /**
-     *  JSON工具类
+     * JSON工具类
      *
      * @return
      */
     @Bean
-    public JacksonUtil jacksonUtil(){
+    public JacksonUtil jacksonUtil() {
         JacksonUtil jacksonUtil = new JacksonUtil();
         jacksonUtil.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
         jacksonUtil.setPropertyNamingStrategy(new PropertyNamingStrategy.UpperCamelCaseStrategy());
@@ -79,11 +79,12 @@ public class WebConfig {
 
     /**
      * redisTemplate配置
+     *
      * @param factory
      * @return
      */
     @Bean
-    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
+    public RedisTemplate redisTemplate(RedisConnectionFactory factory) {
         StringRedisTemplate template = new StringRedisTemplate(factory);
 
         ObjectMapper om = new ObjectMapper();
@@ -99,5 +100,4 @@ public class WebConfig {
 
         return template;
     }
-
 }

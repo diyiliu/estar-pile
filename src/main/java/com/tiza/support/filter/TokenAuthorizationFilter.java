@@ -1,7 +1,5 @@
 package com.tiza.support.filter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.tiza.api.operator.dto.Operator;
 import com.tiza.api.operator.facade.OperatorJpa;
 import com.tiza.support.model.ReqBody;
@@ -20,6 +18,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.security.GeneralSecurityException;
 
 /**
  * Description: TokenAuthorizationFilter
@@ -76,7 +75,6 @@ public class TokenAuthorizationFilter implements Filter {
 
         byte[] bytes = FileCopyUtils.copyToByteArray(req.getInputStream());
         String body = new String(bytes, Charset.forName("UTF-8"));
-
         // 消息体
         ReqBody reqBody = jacksonUtil.toObject(body, ReqBody.class);
 
@@ -109,12 +107,12 @@ public class TokenAuthorizationFilter implements Filter {
             req.setAttribute("data", json);
 
             chain.doFilter(request, response);
-        } catch (Exception e) {
+        } catch (GeneralSecurityException e) {
             e.printStackTrace();
 
             RespResult result = new RespResult();
             result.setRet(500);
-            result.setMsg("数据格式错误");
+            result.setMsg("数据解密异常!");
             interrupt(response, result);
         }
     }

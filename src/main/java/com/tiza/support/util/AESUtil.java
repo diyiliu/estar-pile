@@ -1,14 +1,24 @@
 package com.tiza.support.util;
 //package com.gofun.common.power.telaidian;
 
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import io.netty.handler.codec.base64.Base64Decoder;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
+import java.io.IOException;
 import java.nio.charset.Charset;
+import java.security.GeneralSecurityException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 /*******************************************************************************
  * AES加解密算法
@@ -21,7 +31,7 @@ import java.nio.charset.Charset;
 public class AESUtil {
 
     // 加密
-    public static String Encrypt(String sSrc, String sKey, String ivStr) throws Exception {
+    public static String Encrypt(String sSrc, String sKey, String ivStr) throws GeneralSecurityException {
         if (sKey == null) {
             System.out.print("Key为空null");
             return null;
@@ -46,9 +56,8 @@ public class AESUtil {
         return str;//new BASE64Encoder().encode(encrypted);//此处使用BASE64做转码功能，同时能起到2次加密的作用。
     }
 
-
     // 解密
-    public static String Decrypt(String sSrc, String sKey, String ivStr) throws Exception {
+    public static String Decrypt(String sSrc, String sKey, String ivStr) throws GeneralSecurityException {
         // 判断Key是否正确
         if (sKey == null) {
             System.out.print("Key为空null");
@@ -59,12 +68,13 @@ public class AESUtil {
             System.out.print("Key长度不是16位");
             return null;
         }
-        byte[] raw = sKey.getBytes("UTF-8");
+
+        byte[] raw = sKey.getBytes(Charset.forName("UTF-8"));
         SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         IvParameterSpec iv = new IvParameterSpec(ivStr.getBytes());
         cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
-        byte[] encrypted1 = new BASE64Decoder().decodeBuffer(sSrc);//先用base64解密
+        byte[] encrypted1 = Base64.getDecoder().decode(sSrc);//先用base64解密
         byte[] original = cipher.doFinal(encrypted1);
 
         return new String(original, Charset.forName("UTF-8"));

@@ -3,6 +3,10 @@ package com.tiza.api.station.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Description: ConnectorStatus
  * Author: DIYILIU
@@ -10,8 +14,11 @@ import lombok.Data;
  */
 
 @Data
+@Entity
+@Table(name = "BS_CHARGECONNECTORSTATUS")
 public class ConnectorStatus {
 
+    @Id
     @JsonIgnore
     private Long id;
 

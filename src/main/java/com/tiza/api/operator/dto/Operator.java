@@ -12,7 +12,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "bs_operator")
+@Table(name = "BS_OPERATOR")
 public class Operator {
 
     @Id
