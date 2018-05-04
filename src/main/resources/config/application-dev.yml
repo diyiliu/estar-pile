@@ -5,10 +5,23 @@ server:
 
 # SPRING
 spring:
- jpa:
-   show-sql: true
+  # DATASOURCE
+  datasource:
+    url: 'jdbc:oracle:thin:@192.168.1.156:1521/xgsid.xg156.com'
+    username: 'ESTAR'
+    password: 'ESTAR'
+    driver-class-name: 'oracle.jdbc.OracleDriver'
+
+  # redis
+  redis:
+    database: 11
+    host: 192.168.1.156
+    port: 6379
+
+  jpa:
+    show-sql: true
 
 # LOGGING
 logging:
- level:
-  org.springframework.jdbc: debug
+  level:
+    org.springframework.jdbc: debug

@@ -6,14 +6,7 @@ server:
 # SPRING
 spring:
   profiles:
-    active: dev
-
-  # DATASOURCE
-  datasource:
-    url: 'jdbc:oracle:thin:@192.168.1.156:1521/xgsid.xg156.com'
-    username: 'ESTAR'
-    password: 'ESTAR'
-    driver-class-name: 'oracle.jdbc.OracleDriver'
+    active: prod
 
   # 出现错误时抛出异常
   mvc:
@@ -26,12 +19,6 @@ spring:
   jackson:
     property-naming-strategy: 'UPPER_CAMEL_CASE'
     date-format: yyyy-MM-dd HH:mm:ss
-
-  # redis
-  redis:
-    database: 11
-    host: 192.168.1.156
-    port: 6379
 
   # jpa
   jpa:

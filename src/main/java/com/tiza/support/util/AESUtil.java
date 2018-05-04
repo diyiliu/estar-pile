@@ -1,8 +1,6 @@
 package com.tiza.support.util;
 //package com.gofun.common.power.telaidian;
 
-import sun.misc.BASE64Encoder;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -39,7 +37,7 @@ public class AESUtil {
         // sSrc= escapeChar(sSrc);
         byte[] encrypted = cipher.doFinal(sSrc.getBytes());
 
-        String str = new BASE64Encoder().encode(encrypted);
+        String str = Base64.getEncoder().encodeToString(encrypted);
         str = str.replaceAll("\r\n", "");
         str = str.replaceAll("\n", "");
 
