@@ -85,6 +85,7 @@ public class StationController {
         respMap.put("Status", 0);
         String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
         respResult.setData(respData);
+        respResult.buildSig(operator.getSigSecret());
         respResult.setMsg("设备接口[" + connectorID  +  "更新成功!");
 
         return respResult;

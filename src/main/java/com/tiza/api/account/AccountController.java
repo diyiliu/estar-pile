@@ -75,6 +75,7 @@ public class AccountController {
         respResult.setData(respData);
         respResult.setRet(0);
         respResult.setMsg("请求成功");
+        respResult.buildSig(operator.getSigSecret());
 
         return respResult;
     }

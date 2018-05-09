@@ -6,7 +6,7 @@ server:
 # SPRING
 spring:
   profiles:
-    active: prod
+    active: dev
 
   # 出现错误时抛出异常
   mvc:
