@@ -66,6 +66,7 @@ public class AccountController {
         redisUtil.set(token, t);
 
         Map respMap = new HashMap();
+        respMap.put("OperatorID", operator.getOperatorId());
         respMap.put("SuccStat", 0);
         respMap.put("FailReason", 0);
         respMap.put("AccessToken", token);
