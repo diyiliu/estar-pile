@@ -8,24 +8,26 @@ apply plugin: 'io.spring.dependency-management'
 sourceCompatibility = 1.8
 
 repositories {
+    mavenLocal()
+    mavenCentral()
     jcenter()
     maven { url "https://repo.spring.io/snapshot" }
     maven { url "https://repo.spring.io/milestone" }
 }
 
-ext{
-    springBootVersion = '2.0.0.RELEASE'
+ext {
+    springBootVersion = '2.0.4.RELEASE'
 }
 
 dependencies {
-    compile fileTree(dir:"/lib", include: "*.jar")
-
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "$springBootVersion"
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: "$springBootVersion"
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: "$springBootVersion"
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: "$springBootVersion"
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: "$springBootVersion"
 
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.2'
+    compile group: 'com.oracle', name: 'ojdbc6', version: '12.1.0.1-atlassian-hosted'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
@@ -45,12 +47,14 @@ bootJar {
 
 buildscript {
     repositories {
+        mavenLocal()
+        mavenCentral()
         jcenter()
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
     }
 
     dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.BUILD-SNAPSHOT'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.4.BUILD-SNAPSHOT'
     }
 }

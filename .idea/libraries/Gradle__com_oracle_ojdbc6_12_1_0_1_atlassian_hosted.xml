@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.oracle:ojdbc6:12.1.0.1-atlassian-hosted">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/.gradle/caches/modules-2/files-2.1/com.oracle/ojdbc6/12.1.0.1-atlassian-hosted/5d5d3e7a6b217ddc0c1c4c6d14b352e8b04453ef/ojdbc6-12.1.0.1-atlassian-hosted.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
