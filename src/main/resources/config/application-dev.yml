@@ -13,6 +13,13 @@ spring:
     username: 'ESTAR'
     password: 'ESTAR'
 
+  # jpa
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
   # redis
   redis:
     database: 11

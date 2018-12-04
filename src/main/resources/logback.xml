@@ -101,8 +101,6 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <!-- 显示 SQL -->
-    <!--<logger name="org.hibernate.SQL" level="DEBUG"/>-->
     <!-- 显示 SQL 的绑定参数 -->
     <!--<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>-->
 </configuration>
