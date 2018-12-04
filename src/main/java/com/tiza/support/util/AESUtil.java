@@ -1,5 +1,4 @@
 package com.tiza.support.util;
-//package com.gofun.common.power.telaidian;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;

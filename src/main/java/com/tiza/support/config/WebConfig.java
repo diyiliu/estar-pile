@@ -3,10 +3,7 @@ package com.tiza.support.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.*;
 import com.tiza.support.util.JacksonUtil;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -64,6 +61,7 @@ public class WebConfig {
         JacksonUtil jacksonUtil = new JacksonUtil();
         jacksonUtil.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
         jacksonUtil.setPropertyNamingStrategy(new PropertyNamingStrategy.UpperCamelCaseStrategy());
+        jacksonUtil.getMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         jacksonUtil.getMapper().getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>() {
             @Override
             public void serialize(Object o, JsonGenerator jsonGenerator,

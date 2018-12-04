@@ -5,9 +5,9 @@ import com.tiza.api.station.dto.Connector;
 import com.tiza.api.station.dto.ConnectorStatus;
 import com.tiza.api.station.facade.ConnectorJpa;
 import com.tiza.api.station.facade.ConnectorStatusJpa;
+import com.tiza.support.model.BaseController;
 import com.tiza.support.model.RespResult;
 import com.tiza.support.util.AESUtil;
-import com.tiza.support.util.JacksonUtil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,10 +24,7 @@ import java.util.Map;
  */
 
 @RestController
-public class StationController {
-
-    @Resource
-    private JacksonUtil jacksonUtil;
+public class StationController extends BaseController {
 
     @Resource
     private ConnectorJpa connectorJpa;
@@ -36,7 +33,7 @@ public class StationController {
     private ConnectorStatusJpa connectorStatusJpa;
 
     /**
-     *  推送设备状态
+     *  6.3 推送设备状态
      * @param request
      * @return
      * @throws Exception
@@ -55,7 +52,6 @@ public class StationController {
 
         RespResult respResult = new RespResult();
         respResult.setRet(0);
-
         Map respMap = new HashMap();
         if (connector == null){
             respMap.put("Status", 1);
@@ -74,20 +70,13 @@ public class StationController {
         connectorStatus =  connectorStatusJpa.save(connectorStatus);
         if (connectorStatus == null){
             respMap.put("Status", 1);
+            respResult.setMsg("设备[" + connectorID  +  "]状态更新失败!");
 
-            String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
-            respResult.setData(respData);
-            respResult.setMsg("设备接口[" + connectorID  +  "更新失败!");
-
-            return respResult;
+            return buildResult(respMap, "设备[" + connectorID  +  "]状态更新失败!", operator);
         }
 
         respMap.put("Status", 0);
-        String respData = AESUtil.Encrypt(jacksonUtil.toJson(respMap), operator.getDataSecret(), operator.getDataSecretIv());
-        respResult.setData(respData);
-        respResult.buildSig(operator.getSigSecret());
-        respResult.setMsg("设备接口[" + connectorID  +  "更新成功!");
 
-        return respResult;
+        return buildResult(respMap, "设备[" + connectorID  +  "]状态更新成功!", operator);
     }
 }

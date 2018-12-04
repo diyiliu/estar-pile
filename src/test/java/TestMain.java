@@ -1,6 +1,11 @@
 import com.tiza.support.model.RespResult;
 import com.tiza.support.util.AESUtil;
+import com.tiza.support.util.HMacMD5;
+import com.tiza.support.util.JacksonUtil;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Description: TestMain
@@ -12,23 +17,15 @@ public class TestMain {
 
     @Test
     public void test() throws Exception{
-        String dataSecret = "2BMSzYtvC4pubJLy";
-        String dataSecretIv = "94bxWrkn4S0TB8FO";
-        String str = "{" +
-                "  \"ConnectorStatusInfo\": " +
-                "{" +
-                "\"ConnectorID\":\"3702110116101\"," +
-                "\"Status\":1" +
-                "}" +
-                "}";
+        String dataSecret = "1234567890abcdef";
+        String dataSecretIv = "1234567890abcdef";
+        String str = "{\"OperatorSecret\":\"1234567890abcdef\"}";
 
         String s = AESUtil.Encrypt(str, dataSecret, dataSecretIv);
         System.out.println(s);
 
-
-        s = "U8wqzPK3T1yCE1KJv9krLZNPrvH0e0EAExnY5mB9Vt9wHiWTffYYmYj6K7z4yd20KtHRZYzW0EKnOuI6FWAzEo6CwPqU8WwOwzSpObAGmMFohl8T+w07ntTyiUU9N/FU5mHaW+c6FhmfXi+7o9SiOztY6riwned6+Q/ZKSOmAwm8k6wJr1Xj3BqcDSFmhHpQ";
-
-        System.out.println(AESUtil.Decrypt(s, dataSecret, dataSecretIv));
+        str = "0hRB5aTED8zKH9U+mZtzE9rhQ53h4LJP3q6VY4WGf5u/03lYhYK/rtF7kkZYm/chQkL9IN54mDFzA3qUJvWMnIEzfSCdzpebMYlk3ycl46MNaFd8pHvSdYrtn9OBanwY1F24AB+uY2WQf4VPq9q1iXsQUpZPIJoU1BcwiLPSU61oIMBHMsdQJXsbWsQE0gLa";
+        System.out.println(AESUtil.Decrypt(str, dataSecret, dataSecretIv));
     }
 
     @Test
@@ -41,5 +38,19 @@ public class TestMain {
         result.buildSig("1234567890abcdef");
 
         System.out.println(result.getSig());
+    }
+
+    @Test
+    public void test2(){
+        String sigSecret="1234567890abcdef";
+        StringBuffer strBuf = new StringBuffer();
+        strBuf.append("395815801")
+                .append("")
+                .append("20181204102936")
+                .append("0001");
+
+        String str = HMacMD5.getHmacMd5Str(sigSecret, strBuf.toString());
+        System.out.println(str);
+
     }
 }

@@ -17,6 +17,10 @@ public class RespResult {
     private String data;
     private String sig;
 
+    /**
+     *  按照Ret Msg Data的顺序
+     * @param sigSecret
+     */
     public void buildSig(String sigSecret){
         StringBuffer strBuf = new StringBuffer();
         strBuf.append(ret)
